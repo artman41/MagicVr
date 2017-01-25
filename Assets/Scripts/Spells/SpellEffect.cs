@@ -17,7 +17,7 @@ namespace Assets.Scripts.Spells {
         Explosive, Shatter, Multiply, Grow, Shrink
     }
 
-    public class SpellEffect {
+    public class SpellEffect{
         public SpellEffectElement Element { get; set; }
         public SpellEffectShape Shape { get; set; }
         List<Tuple<SpellEffectModifier, int>> _Modifiers = new List<Tuple<SpellEffectModifier, int>>();
@@ -83,7 +83,12 @@ namespace Assets.Scripts.Spells {
         }
 
         public static GameObject GetGameObject(SpellEffectElement e) {
-            return new GameObject();
+            GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/SpellEffect")) as GameObject;
+            Material m =go.GetComponent<MeshRenderer>().materials[1];
+            m.color = Spell.GetColour(e, 93);
+            go.GetComponent<MeshRenderer>().materials[1] = m;
+            go.transform.position = Vector3.zero;
+            return go;
         }
 
         public static GameObject GetGameObject(SpellEffectShape e) {

@@ -129,7 +129,8 @@ public class ElementalInventory : MonoBehaviour {
 		}
 		Cells [cellId].elementName = s.Name;
 		Cells [cellId].elementColor = s.GetColour();
-		Cells [cellId].UpdateCellInterface ();
+        Cells[cellId].spell = s;
+        Cells [cellId].UpdateCellInterface ();
 	}
 
 	//Returns id of first clear cell

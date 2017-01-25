@@ -8,7 +8,6 @@ namespace Assets.Scripts.Character.Player {
     public class InputManager : MonoBehaviour {
 
         InventoryManager invMan;
-        ElementalInventory inventory;
         Gravity g;
 
         public KeyCode clearInv = KeyCode.C;
@@ -21,29 +20,28 @@ namespace Assets.Scripts.Character.Player {
 
         void Start() {
             invMan = GetComponent<InventoryManager>();
-            inventory = invMan.inventory;
             g = GetComponent<Gravity>();
             VrCamera = Camera.allCameras[0];
         }
 
         void Update() {
             #region Inventory
-            if (inventory != null) {
+            if (invMan.inventory != null) {
                 //if (Input.GetKeyDown (KeyCode.G)) {
                 //	inventory.addItem (SimpleMethods.randomElement(), Random.Range(1, inventory.maxStack), new Color(Random.value/2f, Random.value/2f, Random.value/2f, 1f));
                 //}
 
                 if (Input.GetKeyDown(clearInv)) {
-                    inventory.clear();
+                    invMan.inventory.clear();
                 }
                 if (Input.GetKeyDown(saveInv)) {
-                    PlayerPrefs.SetString("EInventory", inventory.convertToString());
+                    PlayerPrefs.SetString("EInventory", invMan.inventory.convertToString());
                 }
                 if (Input.GetKeyDown(loadInv)) {
-                    inventory.loadFromString(PlayerPrefs.GetString("EInventory"));
+                    invMan.inventory.loadFromString(PlayerPrefs.GetString("EInventory"));
                 }
                 if (Input.GetKeyDown(interactInv)) {
-                    inventory.gameObject.SetActive(!inventory.gameObject.activeInHierarchy);
+                    invMan.inventory.gameObject.SetActive(!invMan.inventory.gameObject.activeInHierarchy);
                 }
             }
             #endregion

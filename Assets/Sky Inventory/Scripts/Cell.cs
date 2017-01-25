@@ -12,12 +12,23 @@ public class Cell : MonoBehaviour {
 	public Color elementColor; // Element Color
 	public Transform elementTransform; //Transform Element
 	private GameObject elementPrefab;
+    GameObject spellPrefab;
 
 	//Method to update UI of this cell
 	public void UpdateCellInterface () {
 		if (elementPrefab == null) {
 			elementPrefab = (FindObjectOfType (typeof(ElementalInventory)) as ElementalInventory).elementPrefab;
 		}
+        if (spell != null) {
+            spellPrefab = SpellEffect.GetGameObject(spell.Effect.Element);
+            Destroy(spellPrefab.GetComponent<Rigidbody>());
+            Destroy(spellPrefab.GetComponent<SphereCollider>());
+            spellPrefab.transform.parent = this.transform;
+            float radius = 60f;
+            spellPrefab.transform.localScale = new Vector3(radius, radius, radius);
+            spellPrefab.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            spellPrefab.transform.localPosition = Vector3.zero;
+        }
 		if (elementCount == 0) {
 			if (elementTransform != null) {
 				Destroy (elementTransform.gameObject);
@@ -36,10 +47,11 @@ public class Cell : MonoBehaviour {
 			//init UI elements
 			Image bgImage = SimpleMethods.getChildByTag (elementTransform, "backgroundImage").GetComponent<Image> ();
 			Text elementText = SimpleMethods.getChildByTag (elementTransform, "elementText").GetComponent<Text> ();
-			//Text amountText = SimpleMethods.getChildByTag (elementTransform, "amountText").GetComponent<Text> ();
-			//change UI options
-			bgImage.color = elementColor;
-			elementText.text = elementName;
+            //Text amountText = SimpleMethods.getChildByTag (elementTransform, "amountText").GetComponent<Text> ();
+            //change UI options
+            //bgImage.color = elementColor;
+            bgImage.gameObject.SetActive(false);
+            elementText.text = elementName;
             Image i = elementText.GetComponentInChildren<Image>();
             i.gameObject.SetActive(false);
 
@@ -61,10 +73,9 @@ public class Cell : MonoBehaviour {
 	//Change element options
 	public void ChangeElement (Spell s) {
 		elementName = s.Name;
-		elementCount = 1;
         spell = s;
-		elementColor = s.GetColour();
-		UpdateCellInterface ();
+        elementCount = 1;
+        UpdateCellInterface ();
 	}
 
 	//Clear element
