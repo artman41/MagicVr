@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Assets.Scripts;
+using UnityEngine;
 
 namespace Assets.Scripts.Spells {
     public enum SpellEffectElement {
@@ -79,6 +80,18 @@ namespace Assets.Scripts.Spells {
                 l.Add(new Tuple<SpellEffectModifier, int>((SpellEffectModifier)Enum.Parse(typeof(SpellEffectModifier), x[0]), int.Parse(x[1])));
             }
             return l;
+        }
+
+        public static GameObject GetGameObject(SpellEffectElement e) {
+            return new GameObject();
+        }
+
+        public static GameObject GetGameObject(SpellEffectShape e) {
+            return new GameObject();
+        }
+
+        public static GameObject GetGameObject(SpellEffectModifier e) {
+            return new GameObject();
         }
     }
 }

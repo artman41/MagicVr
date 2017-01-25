@@ -34,9 +34,9 @@ public class Cell : MonoBehaviour {
 				elementTransform = newElement;
 			}
 			//init UI elements
-			Image bgImage = SimpleMethods.getChildByTag (elementTransform, "Element").GetComponent<Image> ();
-			Text elementText = SimpleMethods.getChildByTag (elementTransform, "amountText").GetComponent<Text> ();
-			//Text amountText = SimpleMethods.getChildByTag (elementTransform, "Undefined").GetComponent<Text> ();
+			Image bgImage = SimpleMethods.getChildByTag (elementTransform, "backgroundImage").GetComponent<Image> ();
+			Text elementText = SimpleMethods.getChildByTag (elementTransform, "elementText").GetComponent<Text> ();
+			//Text amountText = SimpleMethods.getChildByTag (elementTransform, "amountText").GetComponent<Text> ();
 			//change UI options
 			bgImage.color = elementColor;
 			elementText.text = elementName;

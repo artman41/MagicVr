@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cell
+  - Element
+  - backgroundImage
+  - elementText
+  - amountText
+  - spellMaterial
+  - spellShape
+  - spellEffect
   layers:
   - Default
   - TransparentFX
@@ -19,8 +27,8 @@ TagManager:
   - MazeTurretBullet
   - Bg
   - FPSWeapon
-  - 
-  - 
+  - GlassFront
+  - GlassBack
   - 
   - 
   - 
