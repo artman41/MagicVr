@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Spells;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Assets.Scripts.Character.Player {
 
         InventoryManager invMan;
         Gravity g;
+        System.Random Random = new System.Random();
 
         public KeyCode clearInv = KeyCode.C;
         public KeyCode saveInv = KeyCode.P;
@@ -27,21 +29,17 @@ namespace Assets.Scripts.Character.Player {
         void Update() {
             #region Inventory
             if (invMan.inventory != null) {
-                //if (Input.GetKeyDown (KeyCode.G)) {
-                //	inventory.addItem (SimpleMethods.randomElement(), Random.Range(1, inventory.maxStack), new Color(Random.value/2f, Random.value/2f, Random.value/2f, 1f));
+                //if (Input.GetKeyDown(clearInv)) {
+                //    invMan.inventory.clear();
                 //}
-
-                if (Input.GetKeyDown(clearInv)) {
-                    invMan.inventory.clear();
-                }
-                if (Input.GetKeyDown(saveInv)) {
+                /*if (Input.GetKeyDown(saveInv)) {
                     PlayerPrefs.SetString("EInventory", invMan.inventory.convertToString());
-                }
-                if (Input.GetKeyDown(loadInv)) {
-                    invMan.inventory.loadFromString(PlayerPrefs.GetString("EInventory"));
-                }
+                }*/
+                //if (Input.GetKeyDown(loadInv)) {
+                //    invMan.inventory.loadFromString(PlayerPrefs.GetString("EInventory"));
+                //}
                 if (Input.GetKeyDown(interactInv)) {
-                    invMan.inventory.gameObject.SetActive(!invMan.inventory.gameObject.activeInHierarchy);
+                    OpenInv();
                 }
             }
             #endregion
@@ -71,6 +69,13 @@ namespace Assets.Scripts.Character.Player {
             g.moveDirection.y -= g.gravity * Time.deltaTime;
             g.controller.Move(g.moveDirection * Time.deltaTime);
             #endregion
+        }
+
+        public void OpenInv() {
+            //var canv = invMan.inventory.transform.gameObject.GetComponent<Canvas>();
+            //canv.enabled = !canv.enabled;
+            invMan.inventory.gameObject.SetActive(!invMan.inventory.gameObject.activeInHierarchy);
+            Debug.Log("Opening inv");
         }
     }
 }

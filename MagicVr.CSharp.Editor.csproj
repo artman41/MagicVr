@@ -149,6 +149,19 @@
     <Compile Include="Assets\LeapMotion\Scripts\DataStructures\Editor\Tests\RingBufferTest.cs" />
     <Compile Include="Assets\LeapMotion\Scripts\VR\Editor\EyeTypeEditor.cs" />
     <Compile Include="Assets\LeapMotion\Scripts\VR\Editor\LeapTemporalWarpingEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\Attachments\Editor\TransitionEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\Hands\Scripts\Editor\LeapHandsAutoRigEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\InteractionBehaviourBaseEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\InteractionManagerEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\InteractionMaterialEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\SingleLayerEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\Tests\BaseCallGuardTest.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\Tests\InteractionCTest.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\Tests\KabschTest.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\Tests\ShapePoolTest.cs" />
+    <Compile Include="Assets\LeapMotionModules\InteractionEngine\Scripts\Editor\Tests\StructAllocatorTest.cs" />
+    <Compile Include="Assets\LeapMotionModules\UIInput\Editor\CompressibleUIEditor.cs" />
+    <Compile Include="Assets\LeapMotionModules\UIInput\Editor\LeapInputModuleEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantastic Glass\Shaders\Resources\DepthWorldNormals_BackFace.shader" />
@@ -308,6 +321,7 @@
     <None Include="Assets\LeapMotion\Resources\VertexOffsetShader.shader" />
     <None Include="Assets\LeapMotion\Version.txt" />
     <None Include="Assets\LeapMotion\readme.txt" />
+    <None Include="Assets\LeapMotionModules\DetectionExamples\Shaders\LeapPinchLine.shader" />
     <None Include="Assets\ParticleLight\Read Me\Read Me.txt" />
     <None Include="Assets\ParticleLight\Shader\AdditiveMask.shader" />
     <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />

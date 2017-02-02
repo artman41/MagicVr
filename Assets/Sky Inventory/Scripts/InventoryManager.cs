@@ -20,6 +20,7 @@ public class InventoryManager : MonoBehaviour {
         inventory.addItem(SpellFactory.FireSpell, 1);
         inventory.addItem(SpellFactory.WaterSpell, 1);
         inventory.addItem(SpellFactory.GroundSpell, 1);
+        //inventory.transform.gameObject.GetComponent<Canvas>().enabled = false;
         inventory.gameObject.SetActive(false);
     }
 

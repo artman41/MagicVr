@@ -82,19 +82,37 @@ namespace Assets.Scripts.Spells {
             return l;
         }
 
+        /// <summary>
+        /// Returns a GameObject representing the given Element
+        /// </summary>
+        /// <param name="e">Element</param>
+        /// <returns>GameObject</returns>
         public static GameObject GetGameObject(SpellEffectElement e) {
-            GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/SpellEffect")) as GameObject;
-            Material m =go.GetComponent<MeshRenderer>().materials[1];
+            GameObject go = GameObject.Instantiate(Resources.Load("Prefabs/SpellEffect/Element")) as GameObject;
+            Material m = go.GetComponent<MeshRenderer>().materials[1];
             m.color = Spell.GetColour(e, 93);
             go.GetComponent<MeshRenderer>().materials[1] = m;
             go.transform.position = Vector3.zero;
             return go;
         }
 
+        /// <summary>
+        /// Returns a GameObject representing the given Shape
+        /// </summary>
+        /// <param name="e">Shape</param>
+        /// <returns>GameObject</returns>
         public static GameObject GetGameObject(SpellEffectShape e) {
+            //GameObject go = GameObject.Instantiate(Resources.Load(string.Format("Prefabs/SpellEffect/Shapes/{0}", e.ToString()))) as GameObject;
+            //go.transform.position = Vector3.zero;
+            //return go;
             return new GameObject();
         }
 
+        /// <summary>
+        /// Returns a GameObject representing the given Modifier
+        /// </summary>
+        /// <param name="e">Modifier</param>
+        /// <returns>Modifier</returns>
         public static GameObject GetGameObject(SpellEffectModifier e) {
             return new GameObject();
         }

@@ -26,6 +26,14 @@ public class ElementalInventory : MonoBehaviour {
 		}
 	}
 
+    void OnActive() {
+        this.loadFromString(PlayerPrefs.GetString("EInventory"));
+    }
+
+    void OnDisable() {
+        PlayerPrefs.SetString("EInventory", this.convertToString());
+    }
+
 	//Set item from link
 	public void setItemLink (string name, int count, Color color, Transform cell) {
 		Cell thisCell = cell.GetComponent<Cell> ();

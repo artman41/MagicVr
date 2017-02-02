@@ -282,6 +282,7 @@
     <None Include="Assets\LeapMotion\Resources\VertexOffsetShader.shader" />
     <None Include="Assets\LeapMotion\Version.txt" />
     <None Include="Assets\LeapMotion\readme.txt" />
+    <None Include="Assets\LeapMotionModules\DetectionExamples\Shaders\LeapPinchLine.shader" />
     <None Include="Assets\ParticleLight\Read Me\Read Me.txt" />
     <None Include="Assets\ParticleLight\Shader\AdditiveMask.shader" />
     <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />

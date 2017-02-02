@@ -12,6 +12,7 @@ TagManager:
   - spellMaterial
   - spellShape
   - spellEffect
+  - hand
   layers:
   - Default
   - TransparentFX
